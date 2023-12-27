@@ -1,0 +1,35 @@
+@import '../../styles/variables';
+
+.Vacancy{
+    background-color: #fff;
+    border-radius: 40px;
+}
+
+.vacancy_content{
+    padding: 36px 40px 28px;
+}
+.vacancy_header{
+    display: flex;
+    justify-content: space-between;
+}
+.title{
+    font-size: $titleSize;
+    color: $primaryFont;
+    font-weight: $boldFont;
+}
+.sum{
+    font-size: $titleSize;
+    color: $primaryColor;
+    font-weight: $normalFont;
+}
+.time{
+    color: $primaryColor;
+    font-weight: $boldFont;
+    padding: 5px 0;
+}
+.vacancy_actions{
+    padding: 40px 0 0 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
