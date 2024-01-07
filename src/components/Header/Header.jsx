@@ -1,21 +1,25 @@
-import { useEffect } from 'react'
-import links from './Links'
 import { Link } from 'react-router-dom'
+import links from './Links'
+import cls from './Header.module.scss'
 
 export const Header = () => {
-useEffect(() => {
-    console.log(links)
-}, [])
+
   return (
-    <div>
+    <header>
         <div>
             Cashback-sandbox
         </div>
-        <div>
-            {links.length && links.map(({pathName, linkName}, idx) => {
-                return <Link key={idx} to={pathName}>{linkName}</Link>
-            })}
-        </div>
-    </div>
+        <nav className='navbar'>
+            <ul className={cls.navbar_list}>
+                {links.length && links.map(({pathName, linkName}, idx) => {
+                    return (
+                        <li key={idx}>
+                            <Link to={pathName}>{linkName}</Link>
+                        </li>
+                    )
+                })}
+            </ul>
+        </nav>
+    </header>
   )
 }

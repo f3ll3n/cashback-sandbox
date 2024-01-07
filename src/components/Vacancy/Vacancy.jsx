@@ -1,9 +1,15 @@
+import { useDispatch } from 'react-redux';
 import { Button } from '../Button/Button';
 import cls from './Vacancy.module.scss';
+import { completeOrder } from '../../redux/ProfileSlice';
 
-export const Vacancy = () => {
+export const Vacancy = ({vacancy}) => {
+  const {name, duration, payment} = vacancy;
+  const dispatch = useDispatch();
+
   const handleOnCompleteOrder = () => {
-    console.log('заказ выполнен')
+    console.log(`заказ ${name} выполнен: +${duration}, +${payment} ₽`);
+    dispatch(completeOrder({name, payment, duration}))
   }
   const handleOnNTD = () => {
     console.log('неприезд на заказ')
@@ -17,20 +23,17 @@ export const Vacancy = () => {
         <div className={cls.vacancy_content}>
             <div className={cls.vacancy_header}>
                 <div className={cls.vacancy_header_left}>
-                    <p className={cls.title}>Работник торгового зала</p>
-                    <p className={cls.sum}>1745 ₽</p>
+                    <p className={cls.title}>{name}</p>
+                    <p className={cls.sum}>{payment} ₽</p>
                 </div>
                 <div className={cls.vacancy_header_right}>
-                    <p className={cls.time}>12 часов</p>
+                    <p className={cls.time}>{duration} часов</p>
                 </div>
             </div>
             <div className={cls.vacancy_actions}>
                 <Button onClick={handleOnCompleteOrder}>Выполнить</Button>
                 <Button onClick={handleOnNTD}>Неприезд</Button>
                 <Button onClick={handleOnCompleteOrderLate}>Опоздание</Button>
-                {/* <button>Выполнить</button>
-                <button>НТД</button>
-                <button>Опоздание</button> */}
             </div>
         </div>
     </div>

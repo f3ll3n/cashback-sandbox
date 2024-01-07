@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.Infoblock{
+    display: flex;
+    margin: 15px 0 0 0;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: $primaryBackground;
+    font-size: $smallSize;
+    font-weight: $boldFont;
+    color: $primaryFont;
+    align-items: center;
+    img{
+        width: 20px;
+        height: 20px;
+    }
+}

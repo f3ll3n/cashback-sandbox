@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.dataTitle{
+    font-size: 14px;
+    color: $grayFont;
+    font-weight: $normalSize;
+}
+.dataValue{
+    font-size: $normalSize;
+    color: $primaryFont;
+    font-weight: $normalFont;
+}

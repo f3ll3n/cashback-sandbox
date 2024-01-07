@@ -1,9 +1,9 @@
-import { Vacancy } from "../../components/Vacancy/Vacancy"
+import { VacanciesList } from "../../components/VacanciesList/VacanciesList"
 
 export const Vacancies = () => {
   return (
     <div>
-      <Vacancy />
+      <VacanciesList />
     </div>
   )
 }
