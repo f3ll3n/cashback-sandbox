@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { addOrder } from './helpers/addOrder';
+import { calculateCashback } from './helpers/calculateCashback';
 const initialState = {
   ordersHistory: [],
   cash: 0,
@@ -9,7 +10,7 @@ const initialState = {
   cashback: 0,
 //   cashbackCurrent: 0,
   cashbackPercent: 0,
-  ordersCount: 0,
+  ordersTotal: 0,
 //   ordersCurrent: 0,
   ntdCount: 0,
 //   ntdCurrentCount: 0,
@@ -22,12 +23,9 @@ export const profileSlice = createSlice({
   initialState,
   reducers: {
     completeOrder: (state, action) => {
-        addOrder(state, action.payload)
-        // state.ordersHistory.push(action.payload);
-        // state.ordersCount = state.ordersHistory.length;
-        // state.ordersCurrent += 1;
-        // state.cash += action.payload.payment;
-        // state.operatingHours += action.payload.duration;
+        addOrder(state, action.payload);
+        calculateCashback(state);
+        state.ordersHistory.push(action.payload.vacancy);
     },
     decrement: (state) => {
       state.value -= 1

@@ -9,7 +9,7 @@ export const Vacancy = ({vacancy}) => {
 
   const handleOnCompleteOrder = () => {
     console.log(`заказ ${name} выполнен: +${duration}, +${payment} ₽`);
-    dispatch(completeOrder({name, payment, duration}))
+    dispatch(completeOrder({name, payment, duration, vacancy}))
   }
   const handleOnNTD = () => {
     console.log('неприезд на заказ')
@@ -25,7 +25,7 @@ export const Vacancy = ({vacancy}) => {
                 <div className={cls.vacancy_header_left}>
                     <p className={cls.title}>{name}</p>
                     <p className={cls.sum}>{payment} ₽</p>
-                </div>
+                </div>        
                 <div className={cls.vacancy_header_right}>
                     <p className={cls.time}>{duration} часов</p>
                 </div>
