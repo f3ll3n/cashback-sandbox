@@ -1,0 +1,68 @@
+.circlesBlock{
+    width: 100%;
+    position: relative;
+    top: -5px;
+    right: 10px;
+    
+}
+.percent_row{
+    position: absolute;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 20px);
+}
+.text{
+    font-weight: bold;
+    width: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 10%;
+    font-size: 14px;
+}
+.text:last-child{
+    position: relative;
+    right: 0px;
+}
+
+.text_hours{
+    font-weight: normal;
+    width: 30px;
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 10%;
+    font-size: 12px;
+}
+
+.hours_row{
+    position: absolute;
+    top: 24px;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 20px);
+}
+
+.circle{
+    border-radius: 50%;
+    width: 20px;
+    bottom: -18px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    box-sizing: border-box;
+    border: 3px solid #C5BBBB;
+}
+
+.active{
+    border-color: #D3000C;
+    background-color: #D3000C;
+}
+.focus{
+    background-color: #ffffff;
+    border-color: #D3000C;
+}
+.default {
+    border: 3px solid #C5BBBB;
+    background-color: rgb(255, 255, 255);
+}

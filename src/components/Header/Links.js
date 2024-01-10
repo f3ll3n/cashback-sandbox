@@ -1,6 +1,6 @@
 import { RoutePaths } from "../AppRouter/RoutesConfig"
 
-const linkNames = ['Профиль', 'Вакансии', 'Кешбек']
+const linkNames = ['Профиль', 'Вакансии', 'Time Reward']
 
 const links = []; 
 

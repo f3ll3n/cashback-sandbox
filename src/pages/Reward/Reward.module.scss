@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.reward_block{
+    background-color: #fff;
+    border-radius: 40px;
+    margin: 20px 0;
+    width: calc(100% - 20px);
+    padding: 36px 40px 28px;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+.title{
+    padding: 0;
+    margin: 0;
+    font-size: $titleSize;
+    font-weight: $boldFont;
+    color: $primaryFont;
+}
