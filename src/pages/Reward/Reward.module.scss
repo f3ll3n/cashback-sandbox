@@ -1,6 +1,11 @@
 @import '../../styles/variables.scss';
 
+.Reward{
+    position: relative;
+    overflow: hidden;
+}
 .reward_block{
+  
     background-color: #fff;
     border-radius: 40px;
     margin: 20px 0;

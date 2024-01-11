@@ -1,6 +1,9 @@
 @import '../../styles/variables.scss';
 
 .Profile{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
     background-color: #fff;
     width: calc(100% - 20px);
     padding: 36px 40px 28px;

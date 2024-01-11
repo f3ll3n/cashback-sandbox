@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="app">
-      <BrowserRouter>
+      <BrowserRouter basename="/cashback-sandbox">
         <div className='content'>
           <Header/>
           <AppRouter/>
