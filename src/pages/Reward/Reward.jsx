@@ -12,7 +12,7 @@ export const Reward = () => {
       transition={{ duration: 0.5 }}
     >
       <div className={cls.reward_block}>
-        <h2 className={cls.title}>Мой Time Reward</h2>
+        <h2 className={cls.title}>Моя копилка</h2>
         
         <CoefficientWithLockChecker />
         <ProfileStatistics />

@@ -1,7 +1,7 @@
-import { Reward, Profile, Vacancies} from "../../pages";
+import { Reward, Profile, Orders} from "../../pages";
 
 export const RoutePaths = {
 	'/': <Profile />,
-	'/vacancies': <Vacancies />,
+	'/orders': <Orders />,
 	'/reward': <Reward />
 };

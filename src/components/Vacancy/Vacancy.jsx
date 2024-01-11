@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Button } from '../Button/Button';
 import cls from './Vacancy.module.scss';
-import { completeOrder } from '../../redux/ProfileSlice';
+import { completeOrder, completeNtd, completeLate } from '../../redux/ProfileSlice';
 
 export const Vacancy = ({vacancy}) => {
   const {name, duration, payment} = vacancy;
@@ -12,10 +12,10 @@ export const Vacancy = ({vacancy}) => {
     dispatch(completeOrder({name, payment, duration, vacancy}))
   }
   const handleOnNTD = () => {
-    console.log('неприезд на заказ')
+    dispatch(completeNtd())
   }
   const handleOnCompleteOrderLate = () => {
-    console.log('заказ выполнен с опозданием')
+    dispatch(completeLate({name, payment, duration, vacancy}))
   }
 
   return (
@@ -32,8 +32,8 @@ export const Vacancy = ({vacancy}) => {
             </div>
             <div className={cls.vacancy_actions}>
                 <Button onClick={handleOnCompleteOrder}>Выполнить</Button>
-                <Button onClick={handleOnNTD}>Неприезд</Button>
-                <Button onClick={handleOnCompleteOrderLate}>Опоздание</Button>
+                <Button onClick={handleOnNTD}>Нарушение</Button>
+                <Button onClick={handleOnCompleteOrderLate}>3 Опоздания</Button>
             </div>
         </div>
     </div>

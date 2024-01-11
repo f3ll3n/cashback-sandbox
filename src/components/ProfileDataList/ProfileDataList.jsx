@@ -27,8 +27,10 @@ export const ProfileData = [
         dataValue: '24.08.2023'
     }
 ]
+ProfileData.isMetrics = false;
 
 const ProfileDataList = () => {
+  
   return (
     <div className={cls.ProfileDataList}>
         {ProfileData.map((data, idx) => {

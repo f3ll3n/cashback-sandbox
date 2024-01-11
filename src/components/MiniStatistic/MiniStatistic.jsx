@@ -16,6 +16,10 @@ const data = useSelector((state) =>
             Часы: 
             <span className={cls.data}> {data.operatingHours}</span>
         </div>
+        <div>   
+            НТД: 
+            <span className={cls.data}> {data.ntdCount}</span>
+        </div>
     </div>
   )
 }

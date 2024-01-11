@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <header>
         <div>
-            Cashback-sandbox
+            Моя копилка - песочница
         </div>
         <nav className='navbar'>
             <ul className={cls.navbar_list}>

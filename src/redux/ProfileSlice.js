@@ -14,7 +14,7 @@ const initialState = {
 //   ordersCurrent: 0,
   ntdCount: 0,
 //   ntdCurrentCount: 0,
-  lateCount: 0,
+  // lateCount: 0,
 //   lateCurrentCount: 0,
 }
 
@@ -23,20 +23,39 @@ export const profileSlice = createSlice({
   initialState,
   reducers: {
     completeOrder: (state, action) => {
+        state.ordersHistory.push(action.payload.vacancy);
         addOrder(state, action.payload);
         calculateCashback(state);
-        state.ordersHistory.push(action.payload.vacancy);
     },
-    decrement: (state) => {
-      state.value -= 1
+    completeNtd: (state) => {
+      state.ntdCount += 1;
+      calculateCashback(state)
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
+    completeLate: (state, action) => {
+      state.ntdCount += 1;
+      state.ordersHistory.push(action.payload.vacancy);
+      state.ordersHistory.push(action.payload.vacancy);
+      state.ordersHistory.push(action.payload.vacancy);
+      addOrder(state, action.payload);
+      addOrder(state, action.payload);
+      addOrder(state, action.payload);
+      
+      calculateCashback(state)
+      
     },
+    clearAllData: (state) => {
+      state.ordersHistory = [];
+      state.cash = 0;
+      state.operatingHours = 0;
+      state.cashback = 0;
+      state.cashbackPercent = 0;
+      state.ordersTotal = 0;
+      state.ntdCount = 0;
+    }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { completeOrder, decrement, incrementByAmount } = profileSlice.actions
+export const { completeOrder, completeNtd, completeLate, clearAllData } = profileSlice.actions
 
 export default profileSlice.reducer

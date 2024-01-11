@@ -1,8 +1,12 @@
 import { useSelector } from 'react-redux';
 import ProfileDataItem from '../ProfileDataItem/ProfileDataItem';
 import cls from './ProfileStatistics.module.scss';
+import { useDispatch } from 'react-redux';
+import { clearAllData } from '../../redux/ProfileSlice';
+import { MdDeleteForever } from "react-icons/md";
 
 export const ProfileStatistics = () => {  
+  const dispatch = useDispatch();
   const profile = useSelector((state) =>
     state.profile
   );
@@ -10,28 +14,37 @@ export const ProfileStatistics = () => {
   return (
     <div className={cls.ProfileStatistics}>
         <div className={cls.header}>
-          <h2 className={cls.title}>Заказы</h2>
+          <div className={cls.block_header}>
+            <button className={cls.deleteButton} onClick={() => dispatch(clearAllData())}><MdDeleteForever/></button>
+          </div>
+          
           <div className={cls.ProfileDataList}>
             <ProfileDataItem data={{
               dataTitle: 'Заказы (кол-во)',
-              dataValue: profile.ordersTotal
+              dataValue: profile.ordersTotal,
+              isMetrics: true
             }}/>
             <ProfileDataItem data={{
-              dataTitle: 'Наработка (время)',
-              dataValue: `${profile.operatingHours} ч.`
+              dataTitle: 'Наработка (часы)',
+              dataValue: `${profile.operatingHours}`,
+              isMetrics: true
             }}/>
             <ProfileDataItem data={{
-              dataTitle: 'Time Reward (% от суммы наработки)',
-              dataValue: `${profile.cashbackPercent} %`
+              dataTitle: 'Наработка',
+              dataValue: `${profile.cash} ₽`,
+              isMetrics: true
             }}/>
             <ProfileDataItem data={{
-              dataTitle: 'Time Reward (сумма)',
-              dataValue: `${profile.cashback} ₽`
+              dataTitle: 'Процент накопления',
+              dataValue: `${profile.cashbackPercent} %`,
+              isMetrics: true
             }}/>
             <ProfileDataItem data={{
-              dataTitle: 'Наработка (сумма)',
-              dataValue: `${profile.cash} ₽`
+              dataTitle: 'Процентный бонус',
+              dataValue: `${profile.cashback} ₽`,
+              isMetrics: true
             }}/>
+            
           </div>
         </div>
     </div>

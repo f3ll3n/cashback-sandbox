@@ -1,5 +1,27 @@
 @import '../../styles/variables.scss';
 
+.ProfileDataItem{
+    background-color: #D1EDE1;
+    border-radius: 20px;
+    padding: 20px;
+    width: 160px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    align-items: center;
+    flex-direction: column-reverse;
+    text-align: center;
+    .dataValue{
+        font-size: 24px !important;
+        font-weight: $boldFont;
+
+    }
+    .dataTitle{
+        font-size: 12px;
+        color: #000;
+    }
+}
 .dataTitle{
     font-size: 14px;
     color: $grayFont;
@@ -9,4 +31,7 @@
     font-size: $normalSize;
     color: $primaryFont;
     font-weight: $normalFont;
+}
+.accentItem{
+    background-color: #FBE390;
 }

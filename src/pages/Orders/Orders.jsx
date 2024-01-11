@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 import { VacanciesList } from "../../components/VacanciesList/VacanciesList"
-import cls from './Vacancies.module.scss'
+import cls from './Orders.module.scss'
 import { MiniStatistic } from "../../components/MiniStatistic/MiniStatistic"
-export const Vacancies = () => {
+export const Orders = () => {
   return (
     <motion.div
       className={cls.Vacancies}
